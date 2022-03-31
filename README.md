@@ -35,7 +35,7 @@ Once it is created, launch the platform
 
 <img width="1214" alt="image" src="https://user-images.githubusercontent.com/13664652/161131056-fc32b755-6913-4898-b734-4b2ef690aab0.png">
 
-If you have some problems accesing, "login" (the user will appear at top right) and launch it again
+If you have some problems accesing, "login" (the user will appear at top right) and back to the previous screen and click it again.
 
 <img width="1780" alt="image" src="https://user-images.githubusercontent.com/13664652/161131301-3bde2387-c4f7-480b-a4ee-7bd6a374fe1d.png">
 
