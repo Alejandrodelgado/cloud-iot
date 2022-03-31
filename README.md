@@ -161,7 +161,7 @@ Click on the small bug on the right-top and in the button close to the "hello" t
 <img width="1030" alt="image" src="https://user-images.githubusercontent.com/13664652/161159312-5e00b44b-d5ff-4166-911c-fd8a01b7a2fe.png">
 
 
-Now it is time to include a couple of "palettes"
+Now it is time to include a couple of "palettes". (We are going to use this temporal procedure before I add a final release with including it in the pipeline.)
 
 node-red-contrib-scx-ibmiotapp
 node-red-dashboard
