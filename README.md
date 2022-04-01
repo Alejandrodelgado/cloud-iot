@@ -1,7 +1,8 @@
 # cloud-iot
 
 ## Abstract
-Este tutorial está pensado para que te puedas familiarizar con las Posibilidades de Kubernetes - nodered - servicios IoT en IBM CLoud
+
+The objective of this lab is to make familiar a few technologies like IoT, Kubernetes, nodered ... in IBM Public Cloud
 The idea is be able to execute it, with a Academic initiative account.
 It is inspired (or copy, or adapted) from [John Walicki](https://github.com/johnwalicki) Follow him, a person with always interesting ideas!!!
 
