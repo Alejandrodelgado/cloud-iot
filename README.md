@@ -17,6 +17,8 @@ It is inspired (or copy, or adapted) from [John Walicki](https://github.com/john
 
 ## Steps
 
+NOTE: We have found some issues when we execute this lab in some browsers configured in other languaje than English. I would recomend change the browser to english to follow this lab.
+
 ### Kubernetes (K8S)
 
 Create a **free** Kubernetes cluster [K8S](https://cloud.ibm.com/kubernetes/catalog/create)
@@ -44,7 +46,7 @@ If you have some problems accesing, "login" (the user will appear at top right) 
 
 Now you are ready for create or add a *device*
 
-Lets give it a type and an ID (Android in our lab)
+Lets give it a type and an ID (Android in our lab)=> Be care, the app we will use need this device name "Android".
 
 ![image](https://user-images.githubusercontent.com/13664652/161131682-a986915d-68d3-4aeb-b28a-78c9d32be5be.png)
 
@@ -59,12 +61,13 @@ Dont forget to *finish* !!!!
 ![image](https://user-images.githubusercontent.com/13664652/161132090-dcaea32f-a366-4b0a-9eff-e221f38515e7.png)
 
 It is time to test it.
-Download in yor Android [Accelerator app](https://ibm.biz/iot-apk)
+Download in yor Android [Accelerator app](https://ibm.biz/apkiot2) "https://ibm.biz/apkiot2"
 
 You would need some data
 <img width="347" alt="image" src="https://user-images.githubusercontent.com/13664652/161154552-e77a175c-5e55-4138-ba59-369a60025a7b.png">
 
-At top right you have the organization that need in the aplication
+At top right you have the organization that need in the aplication (You can see also in the url of the IoT platform at the beginning)
+https://wtzlkq.internetofthings.ibmcloud.com/dashboard/apps/browse =>> wtzlkq would be my organization
 The device name "Android"
 The code "12345678"
 
