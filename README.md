@@ -104,40 +104,31 @@ and events are like this
 
 It is time now to create a nodered application that will allow us to move data from an environment to other, in this lab to visualize.
 
-Browse in the [catalog](cloud.ibm.com/catalog)  Node red or use this [link](https://cloud.ibm.com/developer/appservice/create-app?starterKit=59c9d5bd-4d31-3611-897a-f94eea80dc9f)
 
-<img width="920" alt="image" src="https://user-images.githubusercontent.com/13664652/161156266-62c36579-6f1d-44a3-9f62-de3afe9b23a3.png">
+In the console
 
-<img width="730" alt="image" src="https://user-images.githubusercontent.com/13664652/161156466-f381fcdd-f2d1-4ab7-b3a4-3baccbc7a00d.png">
+<img width="805" alt="image" src="https://user-images.githubusercontent.com/13664652/227811089-79b1499e-a6a8-4c17-9c3d-434fa8f51646.png">
 
-After a few seconds it will be ready
-<img width="1070" alt="image" src="https://user-images.githubusercontent.com/13664652/161156550-f590c527-7e93-4cba-b7c3-198fa8f188f1.png">
 
-Now click on deploy
 
-<img width="855" alt="image" src="https://user-images.githubusercontent.com/13664652/161156742-cbd60f2a-ebd8-4d3c-a55f-b223ea8e410d.png">
+ibmcloud ks clusters
 
-Select Kubernetes as deploy
-Create an API Key (just click in the button NEW)
-Select Frankfurt as region for deploy.
+ibmcloud ks cluster config --cluster mycluster
 
-You will be request to configure the toolchain (select also FRA)
+kubectl create deployment bordered --image=nodered/node-red
 
-<img width="494" alt="image" src="https://user-images.githubusercontent.com/13664652/161156959-c31eba93-6bf0-427f-8437-8aea5b377c00.png">
+kubectl get pods
 
-You will be returned to the previous page and you will see the progress.
+kubectl create deployment nodered --image=nodered/node-red
 
-<img width="1134" alt="image" src="https://user-images.githubusercontent.com/13664652/161157093-51dde111-6f0b-4fc5-b966-508945f0bb10.png">
+kubectl expose deployment nodered --type="NodePort" --port=1880
 
-If you reload the page, some changes appears
+ibmcloud ks workers -c mycluster
+==>> Public IP
 
-<img width="443" alt="image" src="https://user-images.githubusercontent.com/13664652/161157189-57cfe1f9-da66-4c4e-b3f5-994bd91ad363.png">
+kubectl describe service nodered
+==>> NodePort
 
-It will take about 5-10 min to deploy, you can use this time to explore the pipelines
-
-As it finish, the app url is filled
-
-<img width="1145" alt="image" src="https://user-images.githubusercontent.com/13664652/161158857-e64a1c11-4f07-40df-8774-0ff331dd949f.png">
 
 You can click in it to access nodered
 
@@ -168,6 +159,7 @@ Click on the small bug on the right-top and in the button close to the "hello" t
 Now it is time to include a couple of "palettes". (We are going to use this temporal procedure before I add a final release with including it in the pipeline.)
 
 node-red-contrib-scx-ibmiotapp
+
 node-red-dashboard
 
 at top right - manage palette
