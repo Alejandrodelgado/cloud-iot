@@ -133,6 +133,9 @@ to access node-red use this public-IP:Nodeport
 
 Here we are
 
+<img width="1578" alt="image" src="https://user-images.githubusercontent.com/13664652/227811471-8ba738e3-dfc0-4dec-9904-b5166a3fc787.png">
+
+
 <img width="1176" alt="image" src="https://user-images.githubusercontent.com/13664652/161159171-eb25fb6b-9ba8-4902-a4cd-144765e91e07.png">
 
 Click on the small bug on the right-top and in the button close to the "hello" tab
