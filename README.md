@@ -129,21 +129,7 @@ ibmcloud ks workers -c mycluster
 kubectl describe service nodered
 ==>> NodePort
 
-
-You can click in it to access nodered
-
-<img width="973" alt="image" src="https://user-images.githubusercontent.com/13664652/161158899-785a4367-6e46-45fa-9f6c-af4c3adaa12b.png">
-
-To start working with it, just next  next - next.
-In order to execute the labs, i would recommend leave it Unsecure. Just in order to avoid problems during the labs, not for production.
-
-<img width="801" alt="image" src="https://user-images.githubusercontent.com/13664652/161159012-e35d8a59-1514-43ac-adb8-579a5be07d76.png">
-
-<img width="1077" alt="image" src="https://user-images.githubusercontent.com/13664652/161159050-3a9d480d-8101-44d7-abdc-dbdb66fb8705.png">
-
-Click on GOTO your NODERED
-
-<img width="1077" alt="image" src="https://user-images.githubusercontent.com/13664652/161159089-277bddd8-6c09-4a82-bd88-caf1e4c19244.png">
+to access node-red use this public-IP:Nodeport 
 
 Here we are
 
