@@ -68,17 +68,19 @@ Verify access to the Kubernetes API.
 
 You should see output similar to the following, if so, then your're ready to continue.
 
-NAME              STATUS   AGE
-default           Active   125m
-ibm-cert-store    Active   121m
-ibm-system        Active   124m
-kube-node-lease   Active   125m
-kube-public       Active   125m
-kube-system       Active   125m
+	NAME              STATUS   AGE
+	default           Active   125m
+	ibm-cert-store    Active   121m
+	ibm-system        Active   124m
+	kube-node-lease   Active   125m
+	kube-public       Active   125m
+	kube-system       Active   125m
 
 
 Create your own namespace
-my-name will be for instance your user 
+
+my-name substitute your user 
+
 ..... PLEASE dont create a namespace userxxxxx , substitute xxxx with your number!!!!!
 
 	kubectl create namespace userxxxxx
