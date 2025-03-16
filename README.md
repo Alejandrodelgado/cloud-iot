@@ -36,13 +36,13 @@ Now you can login (if there is a problem with your credentials, continue reading
 if there is problem accesing with ibmcloudcli you have two options:
 	1.- eliminate the need  of MFA  that disable the ability to login just with user password \n
 	https://cloud.ibm.com/iam/settings?tab=authentication
- 		click -- No MFA, disabled CLI logins-- 
-   		Unmark -- disble cli login with only a password ...
-     		click -- apply
-	or
- 	2.- login with sso (after login in ibm cloud in the web browser
-  		ibmcloud login -a cloud.ibm.com -r eu-es -g Default -sso
-in case it doesnt work create a temporary login with token
+ 		click -- No MFA, disabled CLI logins--  
+   		Unmark -- disble cli login with only a password ...  
+     		click -- apply  
+	or  
+ 	2.- login with sso (after login in ibm cloud in the web browser  
+  		ibmcloud login -a cloud.ibm.com -r eu-es -g Default -sso  
+in case it doesnt work create a temporary login with token  
 get a temporary token from console (the passcode you have to get from the console at top right
 
 	ibmcloud login -a https://cloud.ibm.com -u passcode -p <<<passcode that yu see in the console>>>>
