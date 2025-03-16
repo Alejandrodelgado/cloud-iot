@@ -34,7 +34,7 @@ Now you can login (if there is a problem with your credentials, continue reading
 	ibmcloud login -a cloud.ibm.com -r eu-es -g default
 
 if there is problem accesing with ibmcloudcli you have two options:
-	1.- eliminate the need  of MFA  that disable the ability to login just with user password 
+	1.- eliminate the need  of MFA  that disable the ability to login just with user password \n
 	https://cloud.ibm.com/iam/settings?tab=authentication
  		click -- No MFA, disabled CLI logins-- 
    		Unmark -- disble cli login with only a password ...
