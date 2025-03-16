@@ -31,7 +31,7 @@ https://kubernetes.io/docs/tasks/tools/
 
 Now you can login (if there is a problem with your credentials, continue reading)
 
-	ibmcloud login -a cloud.ibm.com -r eu-es -g default
+	ibmcloud login -a cloud.ibm.com -r eu-es -g Default
 
 if there is problem accesing with ibmcloudcli you have two options:  
 	1.- eliminate the need  of MFA  that disable the ability to login just with user password  
@@ -41,7 +41,7 @@ if there is problem accesing with ibmcloudcli you have two options:
      		click -- apply  
 	or  
  	2.- login with sso (after login in ibm cloud in the web browser  
-  		ibmcloud login -a cloud.ibm.com -r eu-es -g Default -sso  
+  		`ibmcloud login -a cloud.ibm.com -r eu-es -g Default -sso`  
 in case it doesnt work create a temporary login with token  
 get a temporary token from console (the passcode you have to get from the console at top right
 
