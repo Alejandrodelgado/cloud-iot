@@ -51,6 +51,10 @@ after login select region and resoruce group
 
 	ibmcloud target -g Default -r eu-es
 
+SELECT IBM PoC account , not user one.
+
+
+
 ### Kubernetes
 
 (This lab is a subset of https://digidevcon.gitbook.io/kubernetes-coderdojo/exercise-0a)
