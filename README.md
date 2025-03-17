@@ -148,7 +148,7 @@ The end result of the run command is not just the pod containing our application
 Once the status reads Running, we need to expose that deployment as a Service so that it can be accessed. By specifying a service type of NodePort, the service will also be mapped to a high-numbered port on each cluster node. The guestbook application listens on port 3000, so this is also specified in the command. Run:
 
 
- 	kubectl expose deployment guestbook --type="NodePort" --port=3000
+ 	kubectl expose deployment guestbook --type="LoadBalancer" --port=3000
 
 	
 service "guestbook" exposed
