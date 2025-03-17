@@ -163,28 +163,31 @@ it will answer
 	guestbook   NodePort   172.21.12.235   d052bce2-eu-de.lb.appdomain.cloud        3000:30805/TCP   1m
 
 The output shows that the <nodeport> is 30805. 
-The service will take incoming connections to the high numbered port, 30805 and forward to port 3000 to the container inside the pod. 
-For a service of type NodePort, a port in the range 30000-32767 is automatically chosen, and could be different for you.
+The service will take incoming connections to the load balancer and forward to port 3000 to the container inside the pod.  
 
 guestbook is now running on your cluster, and exposed to the internet. 
+
+
 We need to find out where it is accessible. 
 The worker nodes running in the container service get external IP addresses. 
 Run $ ibmcloud cs workers <name-of-cluster>, and note the public IP listed on the <public-IP> line.
 
 
 	 ibmcloud ks workers -c iot
+
+  
   it will answer
  
-ID                                               Primary IP      Flavor     State    Status   Zone      Version       Operating System
-kube-cvc07o3f0286kdik2jt0-ioc-default-0000011c   10.243.0.4      bx2.8x32   normal   Ready    eu-de-1   1.32.1_1532   UBUNTU_24_64
-kube-cvc07o3f0286kdik2jt0-ioc-default-000002f0   10.243.128.4    bx2.8x32   normal   Ready    eu-de-3   1.32.1_1532   UBUNTU_24_64
-kube-cvc07o3f0286kdik2jt0-ioc-default-00000380   10.243.64.4     bx2.8x32   normal   Ready    eu-de-2   1.32.1_1532   UBUNTU_24_64
-kube-cvc07o3f0286kdik2jt0-ioc-default-000004fd   10.243.64.12    bx2.8x32   normal   Ready    eu-de-2   1.32.1_1532   UBUNTU_24_64
-kube-cvc07o3f0286kdik2jt0-ioc-default-00000512   10.243.0.12     bx2.8x32   normal   Ready    eu-de-1   1.32.1_1532   UBUNTU_24_64
-kube-cvc07o3f0286kdik2jt0-ioc-default-000006e2   10.243.128.11   bx2.8x32   normal   Ready    eu-de-3   1.32.1_1532   UBUNTU_24_64
+ID                                               Primary IP      Flavor     State    Status   Zone      Version       Operating System  
+kube-cvc07o3f0286kdik2jt0-ioc-default-0000011c   10.243.0.4      bx2.8x32   normal   Ready    eu-de-1   1.32.1_1532   UBUNTU_24_64  
+kube-cvc07o3f0286kdik2jt0-ioc-default-000002f0   10.243.128.4    bx2.8x32   normal   Ready    eu-de-3   1.32.1_1532   UBUNTU_24_64  
+kube-cvc07o3f0286kdik2jt0-ioc-default-00000380   10.243.64.4     bx2.8x32   normal   Ready    eu-de-2   1.32.1_1532   UBUNTU_24_64  
+kube-cvc07o3f0286kdik2jt0-ioc-default-000004fd   10.243.64.12    bx2.8x32   normal   Ready    eu-de-2   1.32.1_1532   UBUNTU_24_64  
+kube-cvc07o3f0286kdik2jt0-ioc-default-00000512   10.243.0.12     bx2.8x32   normal   Ready    eu-de-1   1.32.1_1532   UBUNTU_24_64  
+kube-cvc07o3f0286kdik2jt0-ioc-default-000006e2   10.243.128.11   bx2.8x32   normal   Ready    eu-de-3   1.32.1_1532   UBUNTU_24_64  
   
 
-Now that you have both the address and the port, you can now access the application in the web browser at <EXTERNAL-IP>:<PORT>. In the example case this is 184.172.252.167:30805. Enter in a browser tab your IP address and NodePort for your deployment. Try out the guestbook by putting in a few entries. Keep this browser tab handy as you can use it in the next exercise as well.
+Now that you have both the address and the port, you can now access the application in the web browser at <EXTERNAL-IP>:<PORT>. In the example case this is d052bce2-eu-de.lb.appdomain.cloud:3000. Enter in a browser tab your IP address and NodePort for your deployment. Try out the guestbook by putting in a few entries. Keep this browser tab handy as you can use it in the next exercise as well.
 
 **Congratulations**, you've now deployed an application to Kubernetes!
 
@@ -234,6 +237,8 @@ You should see output listing 10 replicas of your deployment:
 	guestbook-562211614-vz5qw   1/1       Running   0          2m
 	guestbook-562211614-zksw3   1/1       Running   0          2m
 	guestbook-562211614-zsp0j   1/1       Running   0          2m
+
+Now you can test in different browser to understand how important is a shared storage solution. We have deployed a stateless solution, without a storage replication.  
 
 Update and roll back apps
 Kubernetes allows you to do a rolling upgrade of your application to a new container image. Kubernetes allows you to easily update the running image but also allows you to easily undo a rollout if a problem is discovered during or after deployment.
