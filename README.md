@@ -151,7 +151,7 @@ Once the status reads Running, we need to expose that deployment as a Service so
  	kubectl expose deployment guestbook --type="LoadBalancer" --port=3000
 
 	
-service "guestbook" exposed
+service "guestbook" exposed. As it will create a load balancer, it will take several minutes. Dont wait for it.
 
 To find the port used on that worker node, examine your new service:
 
@@ -159,8 +159,8 @@ To find the port used on that worker node, examine your new service:
  	kubectl get service guestbook
 it will answer
 
-	NAME        TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-	guestbook   NodePort   172.21.12.235   <none>        3000:30805/TCP   1m
+	NAME        TYPE       CLUSTER-IP      EXTERNAL-IP   				PORT(S)          AGE
+	guestbook   NodePort   172.21.12.235   d052bce2-eu-de.lb.appdomain.cloud        3000:30805/TCP   1m
 
 The output shows that the <nodeport> is 30805. 
 The service will take incoming connections to the high numbered port, 30805 and forward to port 3000 to the container inside the pod. 
@@ -175,12 +175,16 @@ Run $ ibmcloud cs workers <name-of-cluster>, and note the public IP listed on th
 	 ibmcloud ks workers -c iot
   it will answer
  
- 	ID                                                 Public IP        Private IP     Flavor   State    Status   Zone    Version  
- 	kube-hou02-pa1e3ee39f549640aebea69a444f51fe55-w1   184.172.252.167  10.76.194.30   free     normal   Ready    hou02   1.14.7_1535
+ID                                               Primary IP      Flavor     State    Status   Zone      Version       Operating System
+kube-cvc07o3f0286kdik2jt0-ioc-default-0000011c   10.243.0.4      bx2.8x32   normal   Ready    eu-de-1   1.32.1_1532   UBUNTU_24_64
+kube-cvc07o3f0286kdik2jt0-ioc-default-000002f0   10.243.128.4    bx2.8x32   normal   Ready    eu-de-3   1.32.1_1532   UBUNTU_24_64
+kube-cvc07o3f0286kdik2jt0-ioc-default-00000380   10.243.64.4     bx2.8x32   normal   Ready    eu-de-2   1.32.1_1532   UBUNTU_24_64
+kube-cvc07o3f0286kdik2jt0-ioc-default-000004fd   10.243.64.12    bx2.8x32   normal   Ready    eu-de-2   1.32.1_1532   UBUNTU_24_64
+kube-cvc07o3f0286kdik2jt0-ioc-default-00000512   10.243.0.12     bx2.8x32   normal   Ready    eu-de-1   1.32.1_1532   UBUNTU_24_64
+kube-cvc07o3f0286kdik2jt0-ioc-default-000006e2   10.243.128.11   bx2.8x32   normal   Ready    eu-de-3   1.32.1_1532   UBUNTU_24_64
+  
 
-We can see that our <public-IP> is 184.172.252.167.
-
-Now that you have both the address and the port, you can now access the application in the web browser at <public-IP>:<nodeport>. In the example case this is 184.172.252.167:30805. Enter in a browser tab your IP address and NodePort for your deployment. Try out the guestbook by putting in a few entries. Keep this browser tab handy as you can use it in the next exercise as well.
+Now that you have both the address and the port, you can now access the application in the web browser at <EXTERNAL-IP>:<PORT>. In the example case this is 184.172.252.167:30805. Enter in a browser tab your IP address and NodePort for your deployment. Try out the guestbook by putting in a few entries. Keep this browser tab handy as you can use it in the next exercise as well.
 
 **Congratulations**, you've now deployed an application to Kubernetes!
 
